@@ -16,6 +16,7 @@ const Tabs = (topics) => {
   // </div>
   //
 
+  //creating elements
   const topicDiv = document.createElement('div');
   const tabOne = document.createElement('div');
   const tabTwo = document.createElement('div');
@@ -23,12 +24,14 @@ const Tabs = (topics) => {
   const tabFour = document.createElement('div');
   const tabFive = document.createElement('div');
 
+  //appending elements
   topicDiv.appendChild(tabOne);
   topicDiv.appendChild(tabTwo);
   topicDiv.appendChild(tabThree);
   topicDiv.appendChild(tabFour);
   topicDiv.appendChild(tabFive);
 
+  //creating classes
   topicDiv.classList.add('topics');
   tabOne.classList.add('tab');
   tabTwo.classList.add('tab');
@@ -36,12 +39,14 @@ const Tabs = (topics) => {
   tabFour.classList.add('tab');
   tabFive.classList.add('tab');
 
+  //text content
   tabOne.textContent = topics[0];
   tabTwo.textContent = topics[1];
   tabThree.textContent = topics[2];
   tabFour.textContent = topics[3];
   tabFive.textContent = topics[4];
   // console.log(topicDiv);
+
   return topicDiv;
 
 }
@@ -65,6 +70,7 @@ const tabsAppender = (selector) => {
     //   const newSection = Tabs(topicData);
     //   tabSection.appendChild(newSection);
      // })
+     
     document.querySelector(selector).appendChild(Tabs(resp.data.topics));
     })
   .catch( err => {
